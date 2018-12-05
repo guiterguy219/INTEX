@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace INTEX.Models
 {
@@ -79,6 +80,15 @@ namespace INTEX.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [NotMapped]
+        public string Role { get; set; }
+    }
+
+    public class RoleModel
+    {
+        [Required]
+        public string RoleName { get; set; }
     }
 
     public class ResetPasswordViewModel

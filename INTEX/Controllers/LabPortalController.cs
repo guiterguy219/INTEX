@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace INTEX.Controllers
 {
+    [Authorize(Roles = "singaporelabtech, master")]
     public class LabPortalController : Controller
     {
         // GET: LabPortal
