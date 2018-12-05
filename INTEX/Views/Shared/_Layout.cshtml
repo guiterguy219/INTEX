@@ -27,7 +27,13 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>
+                &copy; @DateTime.Now.Year - Northwest Labs | 
+                @Html.ActionLink("Admin", "Index", "Master") | 
+                @Html.ActionLink("Sales Access", "Index", "SalesPortal") | 
+                @Html.ActionLink("Lab Access", "Index", "LabPortal") | 
+                @Html.ActionLink("Management", "Index", "ManagerPortal")
+            </p>
         </footer>
     </div>
 
