@@ -1,2 +1,2 @@
 ﻿select *
-from AspNetRoles
+from Assay
