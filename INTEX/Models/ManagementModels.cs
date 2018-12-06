@@ -97,4 +97,25 @@ namespace INTEX.Models
         [Required(ErrorMessage ="You must enter a valid number of compounds")]
         public int numCompounds { get; set; }
     }
+
+    [Table("Quote")]
+    public class Quote
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int quoteID { get; set; }
+        public int customerID { get; set; }
+        public DateTime quoteDateReceived { get; set; }
+
+        [Required]
+        [DisplayName("Number of Compounds")]
+        public int quoteNumCompounds { get; set; }
+
+        [Required]
+        [DisplayName("Total Number of Samples")]
+        public int quoteNumSamples { get; set; }
+        
+        [DisplayName("Order Details")]
+        public string quoteDescription { get; set; }
+    }
 }

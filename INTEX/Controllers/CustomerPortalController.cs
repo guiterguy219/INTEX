@@ -63,5 +63,10 @@ namespace INTEX.Controllers
             return View();
         }
 
+        public ActionResult newQuote()
+        {
+            return View();
+        }
+
     }
 }

@@ -308,6 +308,7 @@
     <Content Include="Views\CustomerPortal\newOrder.cshtml" />
     <Content Include="Views\CustomerPortal\newCompound.cshtml" />
     <Content Include="Views\CustomerPortal\newSample.cshtml" />
+    <Content Include="Views\CustomerPortal\newQuote.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
