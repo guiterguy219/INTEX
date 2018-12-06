@@ -47,5 +47,21 @@ namespace INTEX.Controllers
 
             return View(customer);
         }
+
+        public ActionResult newOrder()
+        {
+            return View();
+        }
+
+        public ActionResult newCompound()
+        {
+            return View();
+        }
+
+        public ActionResult newSample()
+        {
+            return View();
+        }
+
     }
 }

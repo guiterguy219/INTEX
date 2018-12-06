@@ -305,6 +305,9 @@
     <Content Include="Views\LabPortal\Index.cshtml" />
     <Content Include="Views\Home\Employee.cshtml" />
     <Content Include="Views\CustomerPortal\Create.cshtml" />
+    <Content Include="Views\CustomerPortal\newOrder.cshtml" />
+    <Content Include="Views\CustomerPortal\newCompound.cshtml" />
+    <Content Include="Views\CustomerPortal\newSample.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
