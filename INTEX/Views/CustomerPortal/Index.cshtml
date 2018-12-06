@@ -3,5 +3,103 @@
     ViewBag.Title = "Index";
 }
 
+<br />
+<br />
 <h2>Customer Portal</h2>
+<br />
 
+
+
+<div class="card-deck">
+    <div class="card text-center">
+
+        <img class="card-img-top" src="~/Images/services.jpg" alt="Our Services" />
+        <div class="card-body">
+            <h3 class="card-title">Our Services</h3>
+            <p>
+                Northwest Labs provides a variety of testing services. Click below to learn more about how we can help you!
+            </p>
+
+            <p><a class="btn btn-primary btn-block" href="@Url.Action("ourServices", "CustomerPortal")">Learn More</a></p>
+
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <img class="card-img-top" src="~/Images/quote.jpg" alt="Get Quote" />
+        <div class="card-body">
+            <h3 class="card-title">Get a Quote</h3>
+            <p>
+                If you are considering using Northwest Labs for your future testing, click below to get a quote based on historical data!
+            </p>
+            <p><a class="btn btn-primary btn-block" href="@Url.Action("Quote", "CustomerPortal")">Get Quote</a></p>
+
+        </div>
+    </div>
+
+
+    <div class="card text-center">
+
+        <img class="card-img-top" src="~/Images/order.jpg" alt="Place Order" />
+        <div class="card-body">
+            <h3 class="card-title">Place an order</h3>
+            <p>
+                Ready to place an order? Click below to begin the process of submitting your compounds to be tested!
+            </p>
+            <p><a class="btn btn-primary btn-block" href="@Url.Action("newOrder", "CustomerPortal")">Place Order</a></p>
+
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="card-deck">
+
+    <div class="card text-center">
+
+        <img class="card-img-top" src="~/Images/account.jpg" alt="My Account" />
+
+        <div class="card-body">
+
+            <h3 class="card-title">My Account</h3>
+
+            <p> Update your account info, change your email, password, payment options, and other personal information. </p>
+
+            <p> <a class="btn btn-primary btn-block" href="@Url.Action("Account", "CustomerPortal")">My Account</a> </p>
+
+        </div>
+
+    </div>
+
+    <div class="card text-center">
+
+        <img class="card-img-top" src="~/Images/status.jpg" alt="Check Status" />
+
+        <div class="card-body">
+
+            <h3 class="card-title">Check Order Status</h3>
+
+            <p> Curious how soon your order will be ready? Click here to check the status of all your orders! </p>
+
+            <p> <a class="btn btn-primary btn-block" href="@Url.Action("orderStatus", "CustomerPortal")">Check Status</a> </p>
+
+        </div>
+
+    </div>
+
+    <div class="card text-center">
+
+        <img class="card-img-top" src="~/Images/invoice.jpg" alt="Order History & Billing" />
+
+        <div class="card-body">
+
+            <h3 class="card-title">Order History &amp; Billing</h3>
+
+            <p> Click below to find invoices and details regarding your previous orders as well as your billing information. </p>
+
+            <p> <a class="btn btn-primary btn-block" href="@Url.Action("Billing", "CustomerPortal")">History &amp; Billing</a> </p>
+
+        </div>
+    </div>
+</div>
