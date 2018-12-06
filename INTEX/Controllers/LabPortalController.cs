@@ -14,5 +14,15 @@ namespace INTEX.Controllers
         {
             return View();
         }
+
+        public ActionResult viewQuotes()
+        {
+            return View();
+        }
+        //TODO: Add Update Quote Status functionality
+        //TODO: Add View Test Schedule
+        //TODO: Add View Today's Orders
+        //TODO: Add Update Order Status
+        //TODO: Add Update Test Functionality
     }
 }
