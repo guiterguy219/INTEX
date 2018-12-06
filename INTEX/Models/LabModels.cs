@@ -29,6 +29,7 @@ namespace INTEX.Models
         public string CompoundName { get; set; }
         public int OrderID { get; set; }
         public virtual Order Order { get; set; }
+        public int numSamples { get; set; }
     }
 
     [Table("Sample")]
@@ -40,15 +41,17 @@ namespace INTEX.Models
         public int LTNumber { get; set; }
         public virtual Compound Compound { get; set; }
         public int SequenceCode { get; set; }
-        public string CompName { get; set; }
-        public string CompQuantity { get; set; }
-        public DateTime CompDateArrived { get; set; }
-        public string CompReceivedBy { get; set; }
-        public string CompAppearance { get; set; }
-        public decimal CompClientWeight { get; set; }
-        public decimal CompMolecMass { get; set; }
-        public decimal CompActualWeight { get; set; }
-        public string CompMTD { get; set; }
+
+        public string sampQuantity { get; set; }
+        public decimal sampActualWeight { get; set; }
+
+        public DateTime sampDateArrived { get; set; }
+        public string sampReceivedBy { get; set; }
+        public string sampAppearance { get; set; }
+        public decimal sampClientWeight { get; set; }
+        public decimal sampMolecMass { get; set; }
+        public string sampMTD { get; set; }
+        public DateTime sampDateDue { get; set; }
     }
 
     [Table("Test")]

@@ -91,5 +91,6 @@ namespace INTEX.Models
         public DateTime OrderDate { get; set; }
         public int CustomerID { get; set; }
         public virtual Customer Customer { get; set; }
+        public int numCompounds { get; set; }
     }
 }
