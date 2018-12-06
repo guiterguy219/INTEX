@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using INTEX.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using INTEX.DAL;
 
 namespace INTEX.Controllers
 {
@@ -22,6 +23,7 @@ namespace INTEX.Controllers
         private ApplicationUserManager _userManager;
         private ApplicationRoleManager _roleManager;
         protected ApplicationDbContext appdb = new ApplicationDbContext();
+        protected NorthwestContext db = new NorthwestContext();
 
         public AccountController()
         {
@@ -188,8 +190,7 @@ namespace INTEX.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "CustomerPortal");
+                    return RedirectToAction("Create", "CustomerPortal", routeValues: new { id = user.Id});
                 }
                 AddErrors(result);
             }
