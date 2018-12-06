@@ -199,6 +199,18 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\account.jpg" />
+    <Content Include="Images\customer.jpg" />
+    <Content Include="Images\employee.jpg" />
+    <Content Include="Images\invoice.jpg" />
+    <Content Include="Images\lab.jpg" />
+    <Content Include="Images\management.jpg" />
+    <Content Include="Images\newCustomer.jpg" />
+    <Content Include="Images\quote.jpg" />
+    <Content Include="Images\sales.jpg" />
+    <Content Include="Images\services.jpg" />
+    <Content Include="Images\status.jpg" />
+    <Content Include="Images\order.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -254,7 +266,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -292,6 +303,7 @@
     <Content Include="Views\SalesPortal\Index.cshtml" />
     <Content Include="Views\ManagerPortal\Index.cshtml" />
     <Content Include="Views\LabPortal\Index.cshtml" />
+    <Content Include="Views\Home\Employee.cshtml" />
     <Content Include="Views\CustomerPortal\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
