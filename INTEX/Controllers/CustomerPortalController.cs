@@ -53,5 +53,15 @@ namespace INTEX.Controllers
             return View();
         }
 
+        public ActionResult newCompound()
+        {
+            return View();
+        }
+
+        public ActionResult newSample()
+        {
+            return View();
+        }
+
     }
 }

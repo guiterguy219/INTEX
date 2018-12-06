@@ -91,6 +91,9 @@ namespace INTEX.Models
         public DateTime OrderDate { get; set; }
         public int CustomerID { get; set; }
         public virtual Customer Customer { get; set; }
+
+        [DisplayName("Number of Compounds")]
+        [Required(ErrorMessage ="You must enter a valid number of compounds")]
         public int numCompounds { get; set; }
     }
 }
