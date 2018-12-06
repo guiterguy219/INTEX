@@ -49,7 +49,7 @@ namespace INTEX.Models
 
         [DisplayName("State")]
         [Required(ErrorMessage = "Please select state.")]
-        public string CustStateID { get; set; }
+        public int StateID { get; set; }
         public virtual State State { get; set; }
 
         [DisplayName("ZIP Code")]
@@ -65,6 +65,7 @@ namespace INTEX.Models
     public class State
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Abbreviation { get; set; }
         public string Name { get; set; }

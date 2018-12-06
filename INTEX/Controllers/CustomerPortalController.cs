@@ -10,7 +10,7 @@ using System.Web.Mvc;
 namespace INTEX.Controllers
 {
     [RequireHttps]
-    [Authorize]//(Roles = "customer, master")]
+    [Authorize(Roles = "customer, master")]
     public class CustomerPortalController : AccountController
     {
         // GET: CustomerPortal
