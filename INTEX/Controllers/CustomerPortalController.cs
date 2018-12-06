@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace INTEX.Controllers
 {
@@ -14,8 +15,19 @@ namespace INTEX.Controllers
     public class CustomerPortalController : AccountController
     {
         // GET: CustomerPortal
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
+            ApplicationUser user = await UserManager.FindByNameAsync(SignInManager.AuthenticationManager.User.Identity.Name);
+            List<Customer> customers = db.Customer.Where(c => c.UserID == user.Id).ToList();
+            if(customers.Count > 0)
+            {
+                ViewBag.ProfileComplete = true;
+            }
+            else
+            {
+                ViewBag.ProfileComplete = false;
+            }
+            ViewBag.Profile = user;
             return View();
         }
 
@@ -53,14 +65,69 @@ namespace INTEX.Controllers
             return View();
         }
 
-        public ActionResult newCompound()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult newOrder(Order order)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                order.OrderDate = DateTime.Now;
+                order.CustomerID = db.Customer.Where(c => c.CustEmail == User.Identity.Name).First().CustomerID;
+                order.OrderStatus = "Requested";
+                db.Order.Add(order);
+                db.SaveChanges();
+
+                return RedirectToAction("newCompound", routeValues: new { orderID = order.OrderID});
+            }
+            return View(order);
         }
 
-        public ActionResult newSample()
+        public ActionResult newCompound(int orderID)
         {
-            return View();
+            Order order = db.Order.Find(orderID);
+            List<Compound> compounds = new List<Compound>();
+            for (int i = 0; i < order.numCompounds; i++){
+                Compound compound = new Compound();
+                compound.OrderID = orderID;
+                compounds.Add(compound);
+            }
+            order.Compounds = compounds;
+
+            return View(order);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult newCompound(Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach(Compound compound in order.Compounds)
+                {
+                    db.Compound.Add(compound);
+                    db.SaveChanges();
+                }
+
+                return RedirectToAction("newSample", routeValues: new { orderID = order.OrderID });
+            }
+
+            return View(order);
+        }
+
+        public ActionResult newSample(int orderID)
+        {
+            Order order = db.Order.Find(orderID);
+            foreach(Compound compound in order.Compounds)
+            {
+                List<Sample> samples = new List<Sample>();
+                for (int i = 0; i < compound.numSamples; i++)
+                {
+                    Sample sample = new Sample();
+                    sample.LTNumber = compound.LTNumber;
+                    samples.Add(sample);
+                }
+            }
+            return View(order);
         }
 
     }

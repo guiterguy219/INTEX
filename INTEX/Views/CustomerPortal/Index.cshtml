@@ -6,7 +6,12 @@
 <h2>Customer Portal</h2>
 <br />
 
-
+@if (!ViewBag.ProfileComplete)
+{
+    <div class="p-4 mb-4 bg-light d-flex flex-column justify-content-center align-items-center">
+        <span class="text-center">Looks like you still need to complete your customer profile! @Html.ActionLink("Finish your profile here.", "Create", "CustomerPortal", routeValues: new { id = ViewBag.Profile.Id}, htmlAttributes: null)</span>
+    </div>
+}
 
 <div class="card-deck">
     <div class="card text-center">

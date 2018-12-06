@@ -77,10 +77,7 @@ namespace INTEX.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            if (SignInManager.AuthenticationManager.User.IsInRole("Customer"))
-            {
-                var chicken = true;
-            }
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 

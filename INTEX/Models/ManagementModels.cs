@@ -96,5 +96,7 @@ namespace INTEX.Models
         [DisplayName("Number of Compounds")]
         [Required(ErrorMessage ="You must enter a valid number of compounds")]
         public int numCompounds { get; set; }
+        public virtual ICollection<Compound> Compounds { get; set; }
+        public string OrderStatus { get; set; }
     }
 }

@@ -35,6 +35,7 @@ namespace INTEX.Models
 
         [DisplayName("Number of Samples")]
         public int numSamples { get; set; }
+        public virtual ICollection<Sample> Samples { get; set; }
 
         public virtual Order Order { get; set; }
     }
