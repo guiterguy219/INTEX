@@ -68,5 +68,13 @@ namespace INTEX.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult newQuote(string quote)
+        {
+            //TODO: Finish HTTP Post Method
+            return View("Index","Home");
+        }
+
     }
 }

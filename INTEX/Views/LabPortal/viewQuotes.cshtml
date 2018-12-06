@@ -1,0 +1,51 @@
+﻿@model IEnumerable<INTEX.Models.Quote>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quoteDateReceived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quoteNumCompounds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quoteNumSamples)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quoteDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.customerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quoteDateReceived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quoteNumCompounds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quoteNumSamples)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quoteDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.quoteID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.quoteID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.quoteID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -104,7 +104,11 @@ namespace INTEX.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int quoteID { get; set; }
+
+        [DisplayName("Customer ID")]
         public int customerID { get; set; }
+
+        [DisplayName("Date Received")]
         public DateTime quoteDateReceived { get; set; }
 
         [Required]
