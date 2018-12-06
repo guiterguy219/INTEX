@@ -2,28 +2,45 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+<br />
+<br />
+<br />
+
+<div class="card">
+    <br />
+    <h1 class="text-center">Northwest Labs</h1>
+    <p class="text-center"> Northwest Labs Pharmaceutical provides chemical and compound tests for companies needing in-depth assay analysis. </p>
+    <br />
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Customer Portal</h2>
-        <p>
-            If you are a returning customer, you click below to be redirect to the Customer Portal.
-        </p>
-        <p><a class="btn btn-default" href="@Url.Action("Index", "CustomerPortal")">Learn more &raquo;</a></p>
+<br />
+
+<div class="card-deck">
+    <div class="card text-center">
+
+        <img class="card-img-top" src="~/Images/newCustomer.jpg" alt="New Customers" />
+        <div class="card-body">
+            <p><a class="btn btn-primary btn-block" href="@Url.Action("About", "Home")">New Customers</a></p>
+
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="card text-center">
+        <img class="card-img-top" src="~/Images/customer.jpg" alt="Current Customers" />
+        <div class="card-body">
+            <p><a class="btn btn-primary btn-block" href="@Url.Action("Index", "CustomerPortal")">Current Customers</a></p>
+
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+
+    <div class="card text-center">
+
+        <img class="card-img-top" src="~/Images/employee.jpg" alt="Employees" />
+        <div class="card-body">
+            <p><a class="btn btn-primary btn-block" href="@Url.Action("Employee", "Home")">Employees</a></p>
+
+        </div>
     </div>
 </div>
