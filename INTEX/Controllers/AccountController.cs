@@ -77,6 +77,10 @@ namespace INTEX.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (SignInManager.AuthenticationManager.User.IsInRole("Customer"))
+            {
+                var chicken = true;
+            }
             return View();
         }
 
@@ -178,19 +182,21 @@ namespace INTEX.Controllers
 
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: false, shouldLockout: false);
                     if (!RoleManager.RoleExists("customer"))
                     {
                         await RoleManager.CreateAsync(new IdentityRole("customer"));
                     }
                     UserManager.AddToRole(user.Id, "customer");
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    return RedirectToAction("Create", "CustomerPortal", routeValues: new { id = user.Id});
+                    return RedirectToAction("Create", "CustomerPortal", routeValues: new { id = user.Id });
                 }
                 AddErrors(result);
             }
