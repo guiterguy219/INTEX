@@ -60,9 +60,18 @@ namespace INTEX.Controllers
             return View(customer);
         }
 
-        public ActionResult newOrder()
+        public async Task<ActionResult> newOrder()
         {
-            return View();
+            ApplicationUser user = await UserManager.FindByNameAsync(SignInManager.AuthenticationManager.User.Identity.Name);
+            List<Customer> customers = db.Customer.Where(c => c.UserID == user.Id).ToList();
+            if (customers.Count > 0)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Create", routeValues: new { id = user.Id });
+            }
         }
 
         [HttpPost]
@@ -130,9 +139,18 @@ namespace INTEX.Controllers
             return View(order);
         }
 
-        public ActionResult newQuote()
+        public async Task<ActionResult> newQuote()
         {
-            return View();
+            ApplicationUser user = await UserManager.FindByNameAsync(SignInManager.AuthenticationManager.User.Identity.Name);
+            List<Customer> customers = db.Customer.Where(c => c.UserID == user.Id).ToList();
+            if (customers.Count > 0)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Create", routeValues: new { id = user.Id });
+            }
         }
 
         [HttpPost]
@@ -141,6 +159,21 @@ namespace INTEX.Controllers
         {
             //TODO: Finish HTTP Post Method
             return View("Index","Home");
+        }
+
+        public async Task<ActionResult> Account()
+        {
+            ApplicationUser user = await UserManager.FindByNameAsync(SignInManager.AuthenticationManager.User.Identity.Name);
+            List<Customer> customers = db.Customer.Where(c => c.UserID == user.Id).ToList();
+            if (customers.Count > 0)
+            {
+                ViewBag.States = new SelectList(db.State, "ID", "Abbreviation");
+                return View(customers.First());
+            }
+            else
+            {
+                return RedirectToAction("Create", routeValues: new { id = user.Id });
+            }
         }
 
     }
