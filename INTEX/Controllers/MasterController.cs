@@ -44,7 +44,7 @@ namespace INTEX.Controllers
                 }
                 AddErrors(result);
             }
-
+            ViewBag.Roles = new SelectList(RoleManager.Roles.ToList(), "Name", "Name");
             // If we got this far, something failed, redisplay form
             return View(model);
         }
