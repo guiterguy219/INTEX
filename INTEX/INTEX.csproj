@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountsReceivableController.cs" />
     <Compile Include="Controllers\CustomerPortalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabPortalController.cs" />
@@ -311,6 +312,7 @@
     <Content Include="Views\CustomerPortal\newQuote.cshtml" />
     <Content Include="Views\LabPortal\viewQuotes.cshtml" />
     <Content Include="Views\CustomerPortal\Account.cshtml" />
+    <Content Include="Views\AccountsReceivable\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
