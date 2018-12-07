@@ -38,7 +38,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CustPhone, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CustPhone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.CustPhone, new { htmlAttributes = new { @class = "form-control", placeholder = "(###) ###-####" } })
                 @Html.ValidationMessageFor(model => model.CustPhone, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -54,7 +54,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CustAddress2, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CustAddress2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.CustAddress2, new { htmlAttributes = new { @class = "form-control", placeholder = "Apt. #, PO Box, Etc." } })
                 @Html.ValidationMessageFor(model => model.CustAddress2, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -92,5 +92,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Go Back", "Index")
 </div>
